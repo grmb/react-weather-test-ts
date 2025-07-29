@@ -32,3 +32,6 @@ dist-ssr
 
 # Local History for Visual Studio Code
 .history/
+
+# Test coverage
+coverage/
