@@ -1,0 +1,18 @@
+.city {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.temperature {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.condition {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.condition-image{
+  max-width: 100%;
+}
