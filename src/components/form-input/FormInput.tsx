@@ -1,7 +1,7 @@
 import './FormInput.css';
 
-function FormInput({ searchInput, setSearchInput, fetchWeatherData, error }) {
-    function handleSearch(e) {
+const FormInput = ({ searchInput, setSearchInput, fetchWeatherData, error }) => {
+    const handleSearch = (e) => {
         e.preventDefault();
         fetchWeatherData(searchInput);
     }

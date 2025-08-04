@@ -1,21 +1,21 @@
 import "./Header.css";
 
 
-function Header() {
+const Header = ({ weatherData }) => {
    
     return (
         <div className="header">
-          <div>
-            <h1 className="heading">Tokyo</h1>
-            <p className="temperature">30°C</p>
+          { weatherData && (<div>
+            <h1 className="heading">{weatherData?.name ? weatherData.name : "-"}</h1>
+            <p className="temperature">{weatherData?.temp ? weatherData?.temp :"-"}°C</p>
             <img
                 className="condition-image"
-                 src=""
-                 alt=""
+                 src={`http://openweathermap.org/img/wn/${weatherData.icon}.png`}
+                 alt={weatherData?.description || ""}
             />
             <p className="condition">Cloudy</p>
-          </div>
-          
+          </div>)
+          }
        
         </div>
     )

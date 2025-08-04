@@ -2,7 +2,7 @@
 
 // Convert Farenheit to Celsius
 export const convertToCelsius = (temp: number) => {
-    return Math.round(temp - 32) * 5/9;
+    return Math.round((temp - 32) * 5/9);
 };
 
 // Convert wind speed from mph to km/h
