@@ -1,6 +1,6 @@
 import { render, fireEvent, screen } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import FormInput from '../../src/components/form-input/FormInput';
+import FormInput from '../../../src/components/form-input/FormInput';
 
 describe('FormInput component', () => {
     it('renders input and button', () => {

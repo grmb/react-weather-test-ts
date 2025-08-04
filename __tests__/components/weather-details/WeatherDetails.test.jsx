@@ -1,6 +1,6 @@
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react'
-import WeatherDetails from '../../src/components/weather-details/WeatherDetails'
+import WeatherDetails from '../../../src/components/weather-details/WeatherDetails'
 
 
 

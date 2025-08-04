@@ -1,7 +1,7 @@
 import { describe, it } from 'vitest';
 import { render, screen } from '@testing-library/react'
-import Forecast from '../../src/components/forecast/Forecast';
-import { forecastDataSample } from '../constants/test-constants';
+import Forecast from '../../../src/components/forecast/Forecast';
+import { forecastDataSample } from '../../constants/test-constants';
 
 
 

@@ -11,19 +11,17 @@ export const useWeatherData = (defaultCity = "Singapore") => {
     const [error, setError] = useState("");
     const [isLoading, setIsLoading] = useState(false);
     
-    const loadWeatherData = async (cityName: string) => {
-        setIsLoading(true);
-        setError("");
+    const loadWeatherData = (cityName: string) => {
         try {
-            const rawWeatherData = await fetchWeatherData(cityName);
-            const rawForecastData = await fetchForecastData(cityName);
+            fetchWeatherData(cityName)
+            .then((resp) => {
+                setWeatherData(normalizeWeatherData(resp.data));
+            } );
+            fetchForecastData(cityName)
+            .then((resp) => {
+                setForecast(normalizeForecastData(resp.data));
+            } );
             setCity(cityName);
-            if (!isEmpty(rawWeatherData) && !isEmpty(rawForecastData)) {
-                setWeatherData(normalizeWeatherData(rawWeatherData));
-                setForecast(normalizeForecastData(rawForecastData));
-            } else {
-                throw new Error("Either weather or forecast data are empty.");
-            }
         } catch (err) {
             console.log(err);
             setError("Could not fetch weather data, please try again.");
