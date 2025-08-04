@@ -1,19 +1,22 @@
 import './WeatherDetails.css';
 
-function WeatherDetails() {
+const WeatherDetails = ({ weatherData }) => {
     
     return (
             <div className="weather-details">
-                <div>
+                {weatherData  &&
                     <div>
-                        <p className="title">Humidity</p>
-                        <p className="detail">40%</p>
+                        <div>
+                            <p className="title">Humidity</p>
+                            <p className="detail">{weatherData?.humidity ? weatherData?.humidity : "-"}%</p>
+                        </div>
+                        <div>
+                            <p className="title">Wind Speed</p>
+                            <p className="detail">{weatherData?.windSpeed ? weatherData?.windSpeed  :  "-"} km/h</p>
+                        </div>
                     </div>
-                    <div>
-                        <p className="title">Wind Speed</p>
-                        <p className="detail">30 km/h</p>
-                    </div>
-                </div>
+                }
+                
             </div>
     )
 }
