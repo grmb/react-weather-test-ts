@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchWeatherData, fetchForecastData } from "../services/weatherApi";
 import { normalizeForecastData, normalizeWeatherData } from "../utils/normalizeWeatherData";
-import { isEmpty } from "lodash";
 
 export const useWeatherData = (defaultCity = "Singapore") => {
     const [weatherData, setWeatherData] = useState({});
@@ -13,15 +12,17 @@ export const useWeatherData = (defaultCity = "Singapore") => {
     
     const loadWeatherData = (cityName: string) => {
         try {
-            fetchWeatherData(cityName)
-            .then((resp) => {
-                setWeatherData(normalizeWeatherData(resp.data));
-            } );
-            fetchForecastData(cityName)
-            .then((resp) => {
-                setForecast(normalizeForecastData(resp.data));
-            } );
-            setCity(cityName);
+            if (city !== searchInput) {
+                fetchWeatherData(cityName)
+                .then((resp) => {
+                    setWeatherData(normalizeWeatherData(resp.data));
+                } );
+                fetchForecastData(cityName)
+                .then((resp) => {
+                    setForecast(normalizeForecastData(resp.data));
+                } );
+                setCity(cityName);
+            }
         } catch (err) {
             console.log(err);
             setError("Could not fetch weather data, please try again.");
