@@ -12,6 +12,8 @@ export const useWeatherData = (defaultCity = "Singapore") => {
     const [isLoading, setIsLoading] = useState(false);
     
     const loadWeatherData = async (cityName: string) => {
+        setIsLoading(true);
+        setError("");
         try {
             const rawWeatherData = await fetchWeatherData(cityName);
             const rawForecastData = await fetchForecastData(cityName);

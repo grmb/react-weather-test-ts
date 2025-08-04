@@ -14,10 +14,11 @@ const App = () => {
    weatherData,
    forecast,
    error,
-   loading,
+   isLoading,
    fetchWeatherData,
   } = useWeatherData("Singapore");
 
+  if(isLoading) return <div className="wrapper">loading...</div>
   return (
     <div className="container">
       <FormInput searchInput={searchInput} setSearchInput={setSearchInput} fetchWeatherData={fetchWeatherData} error={error}/>
