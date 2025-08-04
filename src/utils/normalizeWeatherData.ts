@@ -9,6 +9,7 @@ export const normalizeWeatherData = (data) => {
         condition: data.weather[0].main,
         icon: data.weather[0].icon,
         description: data.weather[0].description,
+        humidity: data.main.humidity
     }
 }
 
