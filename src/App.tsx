@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import './App.css'
 import Forecast from './components/forecast/Forecast'
 import FormInput from './components/form-input/FormInput'
@@ -20,7 +19,7 @@ const App = () => {
 
   if(isLoading) return <div className="wrapper">loading...</div>
   return (
-    <div className="container">
+    <div className="flex flex-col">
       <FormInput searchInput={searchInput} setSearchInput={setSearchInput} fetchWeatherData={fetchWeatherData} error={error}/>
       <Header weatherData={weatherData}/>
       <WeatherDetails weatherData={weatherData} />
