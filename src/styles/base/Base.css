@@ -1,0 +1,23 @@
+/* Theme imports */
+@import "../themes/LightMode.css";
+
+/* Font faces */
+@font-face {
+    font-family: Public-Sans-Regular;
+    src: url("/src/assets/fonts/PublicSans-Regular.woff2");
+}
+
+@font-face {
+    font-family: Public-Sans-Light;
+    src: url("/src/assets/fonts/PublicSans-Light.woff2");
+}
+
+@font-face {
+    font-family: Public-Sans-SemiBold;
+    src: url("/src/assets/fonts/PublicSans-SemiBold.woff2");
+}
+
+@font-face {
+    font-family: Public-Sans-Bold;
+    src: url("/src/assets/fonts/PublicSans-Bold.woff2");
+}
