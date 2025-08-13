@@ -1,5 +1,6 @@
 /* Theme imports */
 @import "../themes/LightMode.css";
+@import "../themes/DarkMode.css";
 
 /* Font faces */
 @font-face {

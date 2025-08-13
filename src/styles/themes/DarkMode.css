@@ -1,0 +1,10 @@
+/* Color themes */
+.theme-dark-mode {
+    --color-red: #FF0000;
+    --color-light-green: #91EAE4;
+    --color-light-purple: #86A8E7;
+    --color-dark-purple: #7F7FD5;
+    --color-black: #000000;
+    --background-webkit-color: -webkit-linear-gradient(to right, var(--color-black), var(--color-black), var(--color-black));
+    --background-color: linear-gradient(to right, var(--color-black), var(--color-black), var(--color-black));
+}

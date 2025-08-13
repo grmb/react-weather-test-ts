@@ -10,6 +10,9 @@ const enableMock = async () => {
   }
 }
 
+const el = document.getElementsByTagName('body');
+  el[0]?.classList.add("theme-dark-mode");
+
 
 enableMock().then(() => { 
   createRoot(document.getElementById('root')!).render(
